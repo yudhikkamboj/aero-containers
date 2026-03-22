@@ -1,0 +1,1 @@
+https://github.com/in28minutes/spring-microservices-v3/blob/main/05.kubernetes/01-step-by-step-changes/readme.md

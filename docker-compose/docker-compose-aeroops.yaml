@@ -29,6 +29,20 @@ services:
     environment:
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://naming-service:8761/eureka/
       MANAGEMENT_ZIPKIN_TRACING_ENDPOINT: http://zipkin-server:9411/api/v2/spans
+
+  apigateway:
+    image: yudhik15/apigateway
+    ports:
+      - "8080:8080"
+    mem_limit: 256m
+    networks:
+      - aeroops-network
+    depends_on:
+      - naming-service
+      - zipkin-server
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://naming-service:8761/eureka/
+      MANAGEMENT_ZIPKIN_TRACING_ENDPOINT: http://zipkin-server:9411/api/v2/spans
   
 
   naming-service:
