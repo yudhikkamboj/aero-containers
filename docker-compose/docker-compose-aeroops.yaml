@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   aircraft-service:
-    image: aircraft-service
+    image: yudhik15/aircraft-service
     ports:
       - "8081:8081"
     mem_limit: 256m
@@ -16,7 +16,7 @@ services:
       MANAGEMENT_ZIPKIN_TRACING_ENDPOINT: http://zipkin-server:9411/api/v2/spans
     
   flight-service:
-    image: flight-service
+    image: yudhik15/flight-service
     ports:
       - "8082:8082"
     mem_limit: 256m
